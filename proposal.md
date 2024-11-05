@@ -5,11 +5,11 @@ Cat-Destroy
 <https://github.com/stickersandstamps/cat-destroy.git>
 
 ## Description
-My final project will be a short game where you play as an all-powerful cat who destroys all the objects it comes into contact with. This is relevant to media and digital arts because video games are a huge part of digital arts, and many people (including myself) are in this course in order to learn more about how to make games.  
+My final project will be a short game where you play as an all-powerful cat who destroys all the objects it comes into contact with. The objects will get larger as the game progresses. This is relevant to media and digital arts because video games are a huge part of digital arts, and many people (including myself) are in this course in order to learn more about how to make games.  
 
 ## Features
 - Main Menu
-	- I will create a main menu so the player isn't immediately thrown into the game. It will give the player three choices, play, options, and quit. This will be done using seperate functions for a main menu screen, options screen, and game screen. I will add clickable buttons so the player can chose between the options.
+	- I will create a main menu so the player isn't immediately thrown into the game. It will give the player three choices, play, options, and quit. This will be done using seperate functions for a main menu screen, options screen, and game screen. I will add clickable buttons so the player can choose between the options.
 - Player Movement 
 	- The player will be in control of a cat sprite which can move around the screen using the WASD keys. I will do this by tracking which keys have been pushed down on, and making the sprite move its x & y positions accordingly. 
 - Destruction on Contact
@@ -36,7 +36,7 @@ Minimal Viable Outcome:
 - Week 1
   1. Create Screens
     - Create seperate screens for the menu, game, and options.
-  2. Create Main Menu buttons
+  2. Create Main Menu Buttons
     - Create play, options, and quit buttons.
     - Allow the player to quit before starting the game by pressing escape or the quit button. 
   3. Add Main Menu Music
@@ -53,7 +53,7 @@ Minimal Viable Outcome:
     - Find images for items and add code to randomize their placement. Utilize the random class.
 
 - Week 3 (Final)
-  1. Add waves of Randomly Spawned Items
+  1. Add Waves of Randomly Spawned Items
     - After one set of items is destroyed, another set should appear immediately after until there are no objects left to destroy. 
   2. Add Game Music & Sound Effects
     - Add the main game's music using the Pygame mixer, and add soundeffects for when an object is destroyed. 
