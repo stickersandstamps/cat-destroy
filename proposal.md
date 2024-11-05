@@ -29,7 +29,7 @@ Ideal Outcome:
 - The ideal outcome for my project is a game where there is a functioning menu screen with three functioning buttons (play, options, and quit), a playable game where the player moves around a cat sprite and runs into randomly spawned objects to destroy them. These objects will progressively get bigger and bigger, going from items like simple mouse toys to entire planets. 
 
 Minimal Viable Outcome:
-- The bare essential outcome for my project is a game where the player can move around as an all-powerful cat, and all the objects that come into contact with said cat disappear from the screen. 
+- The bare essential outcome for my project is a game where the player can move around as an all-powerful cat, and all the objects that come into contact with said cat disappear from the screen. This basic game will still represent basic game-development fundamentals, but isn't as complex as the idea outcome version. 
 
 ## Milestones
 
