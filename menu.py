@@ -24,3 +24,16 @@ class MainMenu(Menu):
         self.optionsx, self.optionsy = self.mid_w, self.mid_h + 50
         self.creditsx, self.creditsy = self.mid_w, self.mid_h + 70
         self.cursor_rect.midtop = (self.startx + self.offset, self.starty)
+
+    def display_menu(self):
+        self.run_display = True
+        while self.run_display:
+            self.game.check_events()
+            self.check_input()
+            self.game.display.fill(self.game.BLACK)
+            self.game.draw_text('Main Menu', 20, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 - 20)
+            self.game.draw_text("Start Game", 20, self.startx, self.starty)
+            self.game.draw_text("Options", 20, self.optionsx, self.optionsy)
+            self.game.draw_text("Credits", 20, self.creditsx, self.creditsy)
+            self.draw_cursor()
+            self.blit_screen()
