@@ -91,3 +91,18 @@ class MainMenu(Menu):
                 self.game.draw_text("Controls", 15, self.controlsx, self.controlsy)
                 self.draw_cursor()
                 self.blit_screen()
+
+        def check_input(self):
+            if self.game.BACK_KEY:
+                self.game.curr_menu = self.game.main_menu
+                self.run_display = False
+            elif self.game.UP_KEY or self.game.DOWN_KEY:
+                if self.state == 'Volume':
+                    self.state = 'Controls'
+                    self.cursor_rect.midtop = (self.controlsx + self.offset, self.controlsy)
+                elif self.state == 'Controls':
+                    self.state = 'Volume'
+                    self.cursor_rect.midtop = (self.volx + self.offset, self.voly)
+            elif self.game.START_KEY:
+                # TO-DO: Create a Volume Menu and a Controls Menu
+                pass
