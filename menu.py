@@ -22,7 +22,7 @@ class MainMenu(Menu):
         self.state = "Start"
         self.startx, self.starty = self.mid_w, self.mid_h + 30
         self.optionsx, self.optionsy = self.mid_w, self.mid_h + 50
-        #self.creditsx, self.creditsy = self.mid_w, self.mid_h + 70
+        self.creditsx, self.creditsy = self.mid_w, self.mid_h + 70
         self.cursor_rect.midtop = (self.startx + self.offset, self.starty)
 
     def display_menu(self):
@@ -34,7 +34,7 @@ class MainMenu(Menu):
             self.game.draw_text('Main Menu', 20, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 - 20)
             self.game.draw_text("Start Game", 20, self.startx, self.starty)
             self.game.draw_text("Options", 20, self.optionsx, self.optionsy)
-            #self.game.draw_text("Credits", 20, self.creditsx, self.creditsy)
+            self.game.draw_text("Credits", 20, self.creditsx, self.creditsy)
             self.draw_cursor()
             self.blit_screen()
 
@@ -59,3 +59,14 @@ class MainMenu(Menu):
             elif self.state == 'Credits':
                 self.cursor_rect.midtop = (self.optionsx + self.offset, self.optionsy)
                 self.state = 'Options'
+
+    def check_input(self):
+        self.move_cursor()
+        if self.game.START_KEY:
+            if self.state == 'Start':
+                self.game.playing = True
+            elif self.state == 'Options':
+                self.game.curr_menu = self.game.options
+            elif self.state == 'Credits':
+                self.game.curr_menu = self.game.credits
+            self.run_display = False
