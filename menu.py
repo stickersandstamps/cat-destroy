@@ -106,3 +106,7 @@ class MainMenu(Menu):
             elif self.game.START_KEY:
                 # TO-DO: Create a Volume Menu and a Controls Menu
                 pass
+
+    class CreditsMenu(Menu):
+        def __init__(self, game):
+            Menu.__init__(self, game)
