@@ -70,3 +70,12 @@ class MainMenu(Menu):
             elif self.state == 'Credits':
                 self.game.curr_menu = self.game.credits
             self.run_display = False
+
+
+    class OptionsMenu(Menu):
+        def __init__(self, game):
+            Menu.__init__(self, game)
+            self.state = 'Volume'
+            self.volx, self.voly = self.mid_w, self.mid_h + 20
+            self.controlsx, self.controlsy = self.mid_w, self.mid_h + 40
+            self.cursor_rect.midtop = (self.volx + self.offset, self.voly)
