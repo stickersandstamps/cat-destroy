@@ -14,9 +14,9 @@ class Game():
         self.clock = pygame.time.Clock()
         self.cat = pygame.Surface((20,20))
         self.cat.fill((255,0,0))
-        self.w = 100
-        self.h = 100
-        self.left = 0
+        self.x = 100
+        self.y = 100
+        self.velocity = 10
         self.press = pygame.event.get
 
 
@@ -55,36 +55,48 @@ class Game():
             #GAME PLAY!!
 
             #sprite drawn
-            self.window.blit(self.cat, (self.w,self.h))
+            self.window.blit(self.cat, (self.x,self.y))
 
 
             
+
+            #arrow key controls
+            # for event in pygame.event.get():
+            #     if event.type == pygame.key.get_pressed():
+            #         if event.key == pygame.K_LEFT:
+            #             self.w -= self.velocity
+            #         elif event.key == pygame.K_RIGHT:
+            #             self.w += self.velocity
+            #         elif event.key == pygame.K_DOWN:
+            #             self.h += self.velocity
+            #         elif event.key == pygame.K_UP:
+            #             self.h -= self.velocity
+            #         elif event.key == pygame.K_ESCAPE:
+            #             pygame.quit()
+
+            #clock 
+            self.clock.tick(100)
             for event in pygame.event.get():
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_LEFT:
-                        self.w -= 1
-                    elif event.key == pygame.K_RIGHT:
-                        self.w += 1
-                    elif event.key == pygame.K_DOWN:
-                        self.h += 1
-                    elif event.key == pygame.K_UP:
-                        self.h -= 1
-                    elif event.key == pygame.K_ESCAPE:
-                        pygame.quit()
+                if event.type == pygame.QUIT:
+                    pygame.quit()
 
-            #clock
-            self.clock.tick(60)
-
-
-
+            #movement
+            keys = pygame.key.get_pressed()
+            if keys[pygame.K_LEFT] | keys[pygame.K_a]:
+                self.x -= self.velocity
+            if keys[pygame.K_RIGHT] | keys[pygame.K_d]:
+                self.x += self.velocity
+            if keys[pygame.K_UP] | keys[pygame.K_w]:
+                self.y -= self.velocity
+            if keys[pygame.K_DOWN] | keys[pygame.K_s]:
+                self.y += self.velocity
+            if keys[pygame.K_ESCAPE]:
+                pygame.quit()
 
 
 
 
 
-
-
-            
             pygame.display.update()
             self.reset_keys()
 
