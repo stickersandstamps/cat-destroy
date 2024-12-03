@@ -78,8 +78,6 @@ class Game():
 
 
 
-
-
             pygame.display.update()
             self.reset_keys()
 
