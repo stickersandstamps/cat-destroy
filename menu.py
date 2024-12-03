@@ -6,7 +6,7 @@ class Menu():
 
         #background menu image
         self.menu_back = pygame.image.load("main_menu_back.png")
-
+        self.game_back = pygame.image.load("game_back.png")
 
 
         self.game = game
@@ -101,18 +101,27 @@ class OptionsMenu(Menu):
         Menu.__init__(self, game)
         self.state = 'Volume'
         self.volx, self.voly = self.mid_w, self.mid_h + 20
-        self.controlsx, self.controlsy = self.mid_w, self.mid_h + 40
+        self.controlsx, self.controlsy = self.mid_w, self.mid_h + 40 + 40
         self.cursor_rect.midtop = (self.volx + self.offset, self.voly)
 
     def display_menu(self):
         self.run_display = True
         while self.run_display:
+
+    
             self.game.check_events()
             self.check_input()
             self.game.display.fill((0, 0, 0))
-            self.game.draw_text('Options', 20, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 - 30)
-            self.game.draw_text("Volume", 15, self.volx, self.voly)
-            self.game.draw_text("Controls", 15, self.controlsx, self.controlsy)
+
+            #options background
+            self.game.display.blit(self.game_back, (0, 0))
+
+            self.game.draw_text('Options', 80, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 - 30)
+
+            #options
+            self.game.draw_text("Volume", 50, self.volx, self.voly)
+            self.game.draw_text("Controls", 50, self.controlsx, self.controlsy)
+
             self.draw_cursor()
             self.blit_screen()
 
@@ -128,7 +137,6 @@ class OptionsMenu(Menu):
                 self.state = 'Volume'
                 self.cursor_rect.midtop = (self.volx + self.offset, self.voly)
         elif self.game.START_KEY:
-            # TO-DO: Create a Volume Menu and a Controls Menu
             pass
 
 class QuitMenu(Menu):
