@@ -37,7 +37,7 @@ class Game():
         self.carX, self.carY = random.randint(0, 1440),random.randint(0, 810)
 
         self.house = pygame.Surface((50,50))
-        self.houseX, self.hosueY = random.randint(0, 1440),random.randint(0, 810)
+        self.houseX, self.houseY = random.randint(0, 1440),random.randint(0, 810)
 
         self.moon = pygame.Surface((50,50))
         self.moonX, self.moonY = random.randint(0, 1440),random.randint(0, 810)
