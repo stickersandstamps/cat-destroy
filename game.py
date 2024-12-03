@@ -57,23 +57,6 @@ class Game():
             #sprite drawn
             self.window.blit(self.cat, (self.x,self.y))
 
-
-            
-
-            #arrow key controls
-            # for event in pygame.event.get():
-            #     if event.type == pygame.key.get_pressed():
-            #         if event.key == pygame.K_LEFT:
-            #             self.w -= self.velocity
-            #         elif event.key == pygame.K_RIGHT:
-            #             self.w += self.velocity
-            #         elif event.key == pygame.K_DOWN:
-            #             self.h += self.velocity
-            #         elif event.key == pygame.K_UP:
-            #             self.h -= self.velocity
-            #         elif event.key == pygame.K_ESCAPE:
-            #             pygame.quit()
-
             #clock 
             self.clock.tick(100)
             for event in pygame.event.get():
