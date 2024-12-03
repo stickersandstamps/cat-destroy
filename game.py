@@ -25,14 +25,28 @@ class Game():
         #target object sprites
         #self.image = pygame.image.load("/path/to/image_file.png")
         self.bug = pygame.Surface((50,50))
-        self.can = pygame.Surface((50,50))
-        self.fish = pygame.Surface((50,50))
-        self.car = pygame.Surface((50,50))
-        self.house = pygame.Surface((50,50))
-        self.moon = pygame.Surface((50,50))
-        self.earth = pygame.Surface((50,50))
-        self.sun = pygame.Surface((50,50))
+        self.bugX, self.bugY = random.randint(0, 1440),random.randint(0, 810)
 
+        self.can = pygame.Surface((50,50))
+        self.canX, self.canY = random.randint(0, 1440),random.randint(0, 810)
+
+        self.fish = pygame.Surface((50,50))
+        self.fishX, self.fishY = random.randint(0, 1440),random.randint(0, 810)
+
+        self.car = pygame.Surface((50,50))
+        self.carX, self.carY = random.randint(0, 1440),random.randint(0, 810)
+
+        self.house = pygame.Surface((50,50))
+        self.houseX, self.hosueY = random.randint(0, 1440),random.randint(0, 810)
+
+        self.moon = pygame.Surface((50,50))
+        self.moonX, self.moonY = random.randint(0, 1440),random.randint(0, 810)
+
+        self.earth = pygame.Surface((50,50))
+        self.earthX, self.earthY = random.randint(0, 1440),random.randint(0, 810)
+
+        self.sun = pygame.Surface((50,50))
+        self.sunX, self.sunY = random.randint(0, 1440),random.randint(0, 810)
 
 
         pygame.init()
@@ -71,6 +85,16 @@ class Game():
 
             #sprite drawn
             self.window.blit(self.cat, (self.x,self.y))
+
+            #draw sprites at random locations
+            self.window.blit(self.bug, (self.bugX, self.bugY))
+            self.window.blit(self.can, (self.canX, self.canY))
+            self.window.blit(self.fish, (self.fishX, self.fishY))
+            self.window.blit(self.car, (self.carX, self.carY))
+            self.window.blit(self.house, (self.houseX, self.houseY))
+            self.window.blit(self.moon, (self.moonX, self.moonY))
+            self.window.blit(self.earth, (self.earthX, self.earthY))
+            self.window.blit(self.sun, (self.sunX, self.sunY))
 
             #clock 
             self.clock.tick(100)
