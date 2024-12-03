@@ -97,15 +97,23 @@ class Game():
             self.window.blit(self.cat, (self.x,self.y))
 
 
-
-
             #check if cat hit any of the objects
-            
             if self.cat.get_rect().colliderect(self.bug.get_rect()):
                 self.level1 = True
-
-
-
+            if self.cat.get_rect().colliderect(self.can.get_rect()):
+                self.level2 = True
+            if self.cat.get_rect().colliderect(self.fish.get_rect()):
+                self.level3 = True
+            if self.cat.get_rect().colliderect(self.car.get_rect()):
+                self.level4 = True
+            if self.cat.get_rect().colliderect(self.house.get_rect()):
+                self.level5 = True
+            if self.cat.get_rect().colliderect(self.moon.get_rect()):
+                self.level6 = True
+            if self.cat.get_rect().colliderect(self.earth.get_rect()):
+                self.level7 = True
+            if self.cat.get_rect().colliderect(self.sun.get_rect()):
+                self.level8 = True
 
 
             #draw sprites at random locations
