@@ -25,7 +25,7 @@ class Game():
         #target object sprites
         #self.image = pygame.image.load("/path/to/image_file.png")
         self.bug = pygame.Surface((50,50))
-        self.bugX, self.bugY = random.randint(0, 1440),random.randint(0, 810)
+        self.bugX, self.bugY = random.randint(0 + 50 , 1440 - 50),random.randint(0 + 50, 810 - 50)
 
         self.can = pygame.Surface((50,50))
         self.canX, self.canY = random.randint(0, 1440),random.randint(0, 810)
@@ -98,22 +98,43 @@ class Game():
 
 
             #check if cat hit any of the objects
-            if self.cat.get_rect().colliderect(self.bug.get_rect()):
-                self.level1 = True
-            if self.cat.get_rect().colliderect(self.can.get_rect()):
-                self.level2 = True
-            if self.cat.get_rect().colliderect(self.fish.get_rect()):
-                self.level3 = True
-            if self.cat.get_rect().colliderect(self.car.get_rect()):
-                self.level4 = True
-            if self.cat.get_rect().colliderect(self.house.get_rect()):
-                self.level5 = True
-            if self.cat.get_rect().colliderect(self.moon.get_rect()):
-                self.level6 = True
-            if self.cat.get_rect().colliderect(self.earth.get_rect()):
-                self.level7 = True
-            if self.cat.get_rect().colliderect(self.sun.get_rect()):
-                self.level8 = True
+
+
+            # if self.cat.get_rect().colliderect(self.bug.get_rect()):
+            #     self.level1 = True
+
+
+
+
+
+
+
+            # if self.x >= self.bugX & self.x <= self.bugX + 50:
+            #     if self.y <= self.bugY & self.y >= self.bugY - 50:
+            #         self.level1 = True
+
+
+
+
+
+
+
+
+
+            # if self.cat.get_rect().colliderect(self.can.get_rect()):
+            #     self.level2 = True
+            # if self.cat.get_rect().colliderect(self.fish.get_rect()):
+            #     self.level3 = True
+            # if self.cat.get_rect().colliderect(self.car.get_rect()):
+            #     self.level4 = True
+            # if self.cat.get_rect().colliderect(self.house.get_rect()):
+            #     self.level5 = True
+            # if self.cat.get_rect().colliderect(self.moon.get_rect()):
+            #     self.level6 = True
+            # if self.cat.get_rect().colliderect(self.earth.get_rect()):
+            #     self.level7 = True
+            # if self.cat.get_rect().colliderect(self.sun.get_rect()):
+            #     self.level8 = True
 
 
             #draw sprites at random locations
@@ -121,43 +142,45 @@ class Game():
             # level 1
             if self.level1 == False:
                 self.window.blit(self.bug, (self.bugX, self.bugY))
-            else:
+            elif self.level1 == True:
                 self.window.blit(self.bug, (2000, 2000))
+
+
             # level 2
-            if self.level1 == False:
-                self.window.blit(self.can, (self.canX, self.canY))
-            else:
-                self.window.blit(self.can, (2000, 2000))
-            # level 3
-            if self.level1 == False:
-                self.window.blit(self.fish, (self.fishX, self.fishY))
-            else:
-                self.window.blit(self.fish, (2000, 2000))
-            # level 4
-            if self.level1 == False:
-                self.window.blit(self.car, (self.carX, self.carY))
-            else:
-                self.window.blit(self.car, (2000, 2000))
-            # level 5
-            if self.level1 == False:
-                self.window.blit(self.house, (self.houseX, self.houseY))
-            else:
-                self.window.blit(self.house, (2000, 2000))
-            # level 6
-            if self.level1 == False:
-                self.window.blit(self.moon, (self.moonX, self.moonY))
-            else:
-                self.window.blit(self.moon, (2000, 2000))
-            # level 7
-            if self.level1 == False:
-                self.window.blit(self.earth, (self.earthX, self.earthY))
-            else:
-                self.window.blit(self.earth, (2000, 2000))
-            # level 8
-            if self.level1 == False:
-                self.window.blit(self.sun, (self.sunX, self.sunY))
-            else:
-                self.window.blit(self.sun, (2000, 2000))
+            # if self.level1 == False:
+            #     self.window.blit(self.can, (self.canX, self.canY))
+            # else:
+            #     self.window.blit(self.can, (2000, 2000))
+            # # level 3
+            # if self.level1 == False:
+            #     self.window.blit(self.fish, (self.fishX, self.fishY))
+            # else:
+            #     self.window.blit(self.fish, (2000, 2000))
+            # # level 4
+            # if self.level1 == False:
+            #     self.window.blit(self.car, (self.carX, self.carY))
+            # else:
+            #     self.window.blit(self.car, (2000, 2000))
+            # # level 5
+            # if self.level1 == False:
+            #     self.window.blit(self.house, (self.houseX, self.houseY))
+            # else:
+            #     self.window.blit(self.house, (2000, 2000))
+            # # level 6
+            # if self.level1 == False:
+            #     self.window.blit(self.moon, (self.moonX, self.moonY))
+            # else:
+            #     self.window.blit(self.moon, (2000, 2000))
+            # # level 7
+            # if self.level1 == False:
+            #     self.window.blit(self.earth, (self.earthX, self.earthY))
+            # else:
+            #     self.window.blit(self.earth, (2000, 2000))
+            # # level 8
+            # if self.level1 == False:
+            #     self.window.blit(self.sun, (self.sunX, self.sunY))
+            # else:
+            #     self.window.blit(self.sun, (2000, 2000))
 
             #clock 
             self.clock.tick(100)
