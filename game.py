@@ -10,12 +10,6 @@ class Game():
 
 
 
-
-
-
-
-
-
         pygame.init()
         self.running, self.playing = True, False
         self.UP_KEY, self.DOWN_KEY, self.START_KEY, self.BACK_KEY = False, False, False, False
@@ -30,22 +24,32 @@ class Game():
         self.curr_menu = self.main_menu
 
     def game_loop(self):
+        #GAME LOOP
         while self.playing:
             self.check_events()
             if self.START_KEY:
                 self.playing= False
             self.display.fill(self.BLACK)
-            self.display.blit(self.game_back, (self.DISPLAY_W,self.DISPLAY_H))
 
+            
+            #background image
+            self.display.blit(self.game_back, (0, 0))
 
-
-
-
-            self.draw_text('Thanks for Playing', 20, self.DISPLAY_W/2, self.DISPLAY_H/2)
+            #unused text
+            #self.draw_text('Thanks for Playing', 20, self.DISPLAY_W/2, self.DISPLAY_H/2)
+            
             self.window.blit(self.display, (0,0))
+            
             pygame.display.update()
             self.reset_keys()
 
+            #GAME PLAY!!
+
+            
+
+
+
+            
 
 
     def check_events(self):
