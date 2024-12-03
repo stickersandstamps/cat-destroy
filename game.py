@@ -10,14 +10,20 @@ class Game():
         #background game image
         self.game_back = pygame.image.load("game_back.png")
 
-        #sprite variable
+        #clock variable
         self.clock = pygame.time.Clock()
-        self.cat = pygame.Surface((20,20))
+
+        #sprite variable
+        self.cat = pygame.Surface((50,50))
         self.cat.fill((255,0,0))
         self.x = 100
         self.y = 100
         self.velocity = 10
         self.press = pygame.event.get
+
+        #target object sprites
+
+
 
 
         pygame.init()
@@ -63,16 +69,25 @@ class Game():
                 if event.type == pygame.QUIT:
                     pygame.quit()
 
+
+            #true/false boundary values
+                
+
+
             #movement
             keys = pygame.key.get_pressed()
             if keys[pygame.K_LEFT] | keys[pygame.K_a]:
-                self.x -= self.velocity
+                if self.x > 0:
+                    self.x -= self.velocity
             if keys[pygame.K_RIGHT] | keys[pygame.K_d]:
-                self.x += self.velocity
+                if self.x < self.DISPLAY_W - 50:
+                    self.x += self.velocity
             if keys[pygame.K_UP] | keys[pygame.K_w]:
-                self.y -= self.velocity
+                if self.y > 0:
+                    self.y -= self.velocity
             if keys[pygame.K_DOWN] | keys[pygame.K_s]:
-                self.y += self.velocity
+                if self.y < self.DISPLAY_H - 50:
+                    self.y += self.velocity
             if keys[pygame.K_ESCAPE]:
                 pygame.quit()
 
