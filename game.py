@@ -28,10 +28,10 @@ class Game():
         #GAME LOOP
         while self.playing:
 
-            #MUSIC
+            #GAME MUSIC
             mixer.init()
-            mixer.music.load("song.mp3")
-            mixer.music.set_volume(0.7)
+            mixer.music.load("game_music.mp3")
+            mixer.music.set_volume(0.9)
             mixer.music.play()
 
 

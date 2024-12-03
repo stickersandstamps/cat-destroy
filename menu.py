@@ -1,4 +1,5 @@
 import pygame
+from pygame import mixer 
 
 class Menu():
     def __init__(self, game):
@@ -29,6 +30,13 @@ class Menu():
 
 class MainMenu(Menu):
     def __init__(self, game):
+
+    #MENU MUSIC
+        mixer.init()
+        mixer.music.load("main_menu_music.mp3")
+        mixer.music.set_volume(0.9)
+        mixer.music.play()
+
         Menu.__init__(self, game)
         self.state = "Start"
         self.startx, self.starty = self.mid_w, self.mid_h + 30
