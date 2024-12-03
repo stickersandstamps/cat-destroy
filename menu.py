@@ -120,7 +120,7 @@ class OptionsMenu(Menu):
 
             #options
             self.game.draw_text("Volume", 50, self.volx, self.voly)
-            self.game.draw_text("Controls", 50, self.controlsx, self.controlsy)
+            #self.game.draw_text("Controls", 50, self.controlsx, self.controlsy)
 
             self.draw_cursor()
             self.blit_screen()
