@@ -16,6 +16,7 @@ class Game():
         #sprite variable
         self.cat = pygame.Surface((50,50))
         self.cat.fill((255,0,0))
+        self.cat = pygame.image.load("cat.png")
         self.x = 100
         self.y = 100
         self.velocity = 10
