@@ -9,8 +9,6 @@ class Game():
         #background game image
         self.game_back = pygame.image.load("game_back.png")
 
-
-
         pygame.init()
         self.running, self.playing = True, False
         self.UP_KEY, self.DOWN_KEY, self.START_KEY, self.BACK_KEY = False, False, False, False
@@ -27,13 +25,6 @@ class Game():
     def game_loop(self):
         #GAME LOOP
         while self.playing:
-
-            #GAME MUSIC
-            mixer.init()
-            mixer.music.load("game_music.mp3")
-            mixer.music.set_volume(0.9)
-            mixer.music.play()
-
 
             self.check_events()
             if self.START_KEY:
