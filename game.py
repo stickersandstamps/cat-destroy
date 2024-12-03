@@ -22,7 +22,15 @@ class Game():
         self.press = pygame.event.get
 
         #target object sprites
-
+        #self.image = pygame.image.load("/path/to/image_file.png")
+        self.bug = pygame.Surface((50,50))
+        self.can = pygame.Surface((50,50))
+        self.fish = pygame.Surface((50,50))
+        self.car = pygame.Surface((50,50))
+        self.house = pygame.Surface((50,50))
+        self.moon = pygame.Surface((50,50))
+        self.earth = pygame.Surface((50,50))
+        self.sun = pygame.Surface((50,50))
 
 
 
@@ -68,9 +76,6 @@ class Game():
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
-
-
-            #true/false boundary values
                 
 
 
