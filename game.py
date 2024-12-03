@@ -48,6 +48,10 @@ class Game():
         self.sun = pygame.Surface((50,50))
         self.sunX, self.sunY = random.randint(0, 1440),random.randint(0, 810)
 
+        #level complete true/false
+        
+
+
 
         pygame.init()
         self.running, self.playing = True, False
@@ -87,13 +91,21 @@ class Game():
             self.window.blit(self.cat, (self.x,self.y))
 
             #draw sprites at random locations
+            # level 1
             self.window.blit(self.bug, (self.bugX, self.bugY))
             self.window.blit(self.can, (self.canX, self.canY))
+
+            # level 2
             self.window.blit(self.fish, (self.fishX, self.fishY))
+
             self.window.blit(self.car, (self.carX, self.carY))
             self.window.blit(self.house, (self.houseX, self.houseY))
+
+            # level 3
             self.window.blit(self.moon, (self.moonX, self.moonY))
             self.window.blit(self.earth, (self.earthX, self.earthY))
+
+            # level 4
             self.window.blit(self.sun, (self.sunX, self.sunY))
 
             #clock 
