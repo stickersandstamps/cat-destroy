@@ -123,44 +123,36 @@ class Game():
                 self.window.blit(self.bug, (self.bugX, self.bugY))
             else:
                 self.window.blit(self.bug, (2000, 2000))
-                
-                
             # level 2
             if self.level1 == False:
                 self.window.blit(self.can, (self.canX, self.canY))
             else:
                 self.window.blit(self.can, (2000, 2000))
-
             # level 3
             if self.level1 == False:
                 self.window.blit(self.fish, (self.fishX, self.fishY))
             else:
                 self.window.blit(self.fish, (2000, 2000))
-
             # level 4
             if self.level1 == False:
                 self.window.blit(self.car, (self.carX, self.carY))
             else:
                 self.window.blit(self.car, (2000, 2000))
-
             # level 5
             if self.level1 == False:
                 self.window.blit(self.house, (self.houseX, self.houseY))
             else:
                 self.window.blit(self.house, (2000, 2000))
-
             # level 6
             if self.level1 == False:
                 self.window.blit(self.moon, (self.moonX, self.moonY))
             else:
                 self.window.blit(self.moon, (2000, 2000))
-
             # level 7
             if self.level1 == False:
                 self.window.blit(self.earth, (self.earthX, self.earthY))
             else:
                 self.window.blit(self.earth, (2000, 2000))
-
             # level 8
             if self.level1 == False:
                 self.window.blit(self.sun, (self.sunX, self.sunY))
