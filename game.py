@@ -1,4 +1,5 @@
 import pygame
+from pygame import mixer 
 from menu import *
 
 
@@ -26,6 +27,14 @@ class Game():
     def game_loop(self):
         #GAME LOOP
         while self.playing:
+
+            #MUSIC
+            mixer.init()
+            mixer.music.load("song.mp3")
+            mixer.music.set_volume(0.7)
+            mixer.music.play()
+
+
             self.check_events()
             if self.START_KEY:
                 self.playing= False
