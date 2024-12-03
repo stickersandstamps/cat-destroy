@@ -10,6 +10,11 @@ class Game():
         #background game image
         self.game_back = pygame.image.load("game_back.png")
 
+        #sprite variable
+        cat = pygame.Surface((20,20))
+        cat.fill((255,0,0))
+
+
         pygame.init()
         self.running, self.playing = True, False
         self.UP_KEY, self.DOWN_KEY, self.START_KEY, self.BACK_KEY = False, False, False, False
