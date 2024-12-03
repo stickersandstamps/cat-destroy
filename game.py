@@ -3,7 +3,12 @@ from menu import *
 
 class Game():
     def __init__(self):
-        #main menu self code
+
+        #image code
+        self.menu_background = pygame.image.load("main_menu_back.png")
+        self.game_background = pygame.image.load("game_back.png")
+
+
         pygame.init()
         self.running, self.playing = True, False
         self.UP_KEY, self.DOWN_KEY, self.START_KEY, self.BACK_KEY = False, False, False, False
@@ -23,9 +28,11 @@ class Game():
             self.check_events()
             if self.START_KEY:
                 self.playing= False
+
             self.display.fill(self.BLACK)
-            self.draw_text('Thanks for Playing', 20, self.DISPLAY_W/2, self.DISPLAY_H/2)
-            self.window.blit(self.display, (0,0))
+
+            #self.draw_text('Thanks for Playing', 20, self.DISPLAY_W/2, self.DISPLAY_H/2)
+            self.window.blit(self.game_background, (0,0))
             pygame.display.update()
             self.reset_keys()
 

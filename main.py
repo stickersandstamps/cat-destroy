@@ -7,7 +7,7 @@ while g.running:
     #music code
     mixer.init() 
     mixer.music.load("game_music.mp3")
-    mixer.music.set_volume(0.7) 
+    mixer.music.set_volume(1) 
     mixer.music.play()
 
     g.curr_menu.display_menu()

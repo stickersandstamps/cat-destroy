@@ -2,6 +2,11 @@ import pygame
 
 class Menu():
     def __init__(self, game):
+
+        #background code
+        self.menu_background = pygame.image.load("main_menu_back.png")
+        game.window.blit(self.menu_background, (0, 0))
+
         self.game = game
         self.mid_w, self.mid_h = self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2
         self.run_display = True
@@ -12,7 +17,7 @@ class Menu():
         self.game.draw_text('*', 15, self.cursor_rect.x, self.cursor_rect.y)
 
     def blit_screen(self):
-        self.game.window.blit(self.game.display, (0, 0))
+        #self.game.window.blit(self.game.display, (0, 0))
         pygame.display.update()
         self.game.reset_keys()
 
