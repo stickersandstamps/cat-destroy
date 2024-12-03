@@ -11,8 +11,11 @@ class Game():
         self.game_back = pygame.image.load("game_back.png")
 
         #sprite variable
-        cat = pygame.Surface((20,20))
-        cat.fill((255,0,0))
+        self.cat = pygame.Surface((20,20))
+        self.cat.fill((255,0,0))
+        self.w = 100
+        self.h = 100
+        self.press = pygame.event.get
 
 
         pygame.init()
@@ -45,17 +48,45 @@ class Game():
             #self.draw_text('Thanks for Playing', 20, self.DISPLAY_W/2, self.DISPLAY_H/2)
             
             self.window.blit(self.display, (0,0))
+
+
+            #GAME PLAY!!
+
+            #sprite drawn
+            self.window.blit(self.cat, (self.w,self.h))
+
+
+            
+            for event in pygame.event.get():
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_LEFT:
+                        self.w -= 1
+                    elif event.key == pygame.K_RIGHT:
+                        self.w += 1
+                    elif event.key == pygame.K_DOWN:
+                        self.h += 1
+                    elif event.key == pygame.K_UP:
+                        self.h -= 1
+                    elif event.key == pygame.K_ESCAPE:
+                        pygame.quit()
+
+
+
+
+
+
+
+
+
+
+
             
             pygame.display.update()
             self.reset_keys()
 
-            #GAME PLAY!!
-
-
-
-
-
             
+
+
 
 
     def check_events(self):
