@@ -96,31 +96,68 @@ class Game():
             #sprite drawn
             self.window.blit(self.cat, (self.x,self.y))
 
+
+
+
+            #check if cat hit any of the objects
+            
+            if self.cat.get_rect().colliderect(self.bug.get_rect()):
+                self.level1 = True
+
+
+
+
+
             #draw sprites at random locations
             
             # level 1
-            self.window.blit(self.bug, (self.bugX, self.bugY))
-
+            if self.level1 == False:
+                self.window.blit(self.bug, (self.bugX, self.bugY))
+            else:
+                self.window.blit(self.bug, (2000, 2000))
+                
+                
             # level 2
-            self.window.blit(self.can, (self.canX, self.canY))
+            if self.level1 == False:
+                self.window.blit(self.can, (self.canX, self.canY))
+            else:
+                self.window.blit(self.can, (2000, 2000))
 
             # level 3
-            self.window.blit(self.fish, (self.fishX, self.fishY))
+            if self.level1 == False:
+                self.window.blit(self.fish, (self.fishX, self.fishY))
+            else:
+                self.window.blit(self.fish, (2000, 2000))
 
             # level 4
-            self.window.blit(self.car, (self.carX, self.carY))
+            if self.level1 == False:
+                self.window.blit(self.car, (self.carX, self.carY))
+            else:
+                self.window.blit(self.car, (2000, 2000))
 
             # level 5
-            self.window.blit(self.house, (self.houseX, self.houseY))
+            if self.level1 == False:
+                self.window.blit(self.house, (self.houseX, self.houseY))
+            else:
+                self.window.blit(self.house, (2000, 2000))
 
             # level 6
-            self.window.blit(self.moon, (self.moonX, self.moonY))
+            if self.level1 == False:
+                self.window.blit(self.moon, (self.moonX, self.moonY))
+            else:
+                self.window.blit(self.moon, (2000, 2000))
 
             # level 7
-            self.window.blit(self.earth, (self.earthX, self.earthY))
+            if self.level1 == False:
+                self.window.blit(self.earth, (self.earthX, self.earthY))
+            else:
+                self.window.blit(self.earth, (2000, 2000))
 
             # level 8
-            self.window.blit(self.sun, (self.sunX, self.sunY))
+            if self.level1 == False:
+                self.window.blit(self.sun, (self.sunX, self.sunY))
+            else:
+                self.window.blit(self.sun, (2000, 2000))
 
             #clock 
             self.clock.tick(100)
