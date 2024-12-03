@@ -11,10 +11,12 @@ class Game():
         self.game_back = pygame.image.load("game_back.png")
 
         #sprite variable
+        self.clock = pygame.time.Clock()
         self.cat = pygame.Surface((20,20))
         self.cat.fill((255,0,0))
         self.w = 100
         self.h = 100
+        self.left = 0
         self.press = pygame.event.get
 
 
@@ -70,6 +72,8 @@ class Game():
                     elif event.key == pygame.K_ESCAPE:
                         pygame.quit()
 
+            #clock
+            self.clock.tick(60)
 
 
 
