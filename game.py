@@ -14,17 +14,22 @@ class Game():
         self.clock = pygame.time.Clock()
 
         #sprite variable
-        self.cat = pygame.Surface((50,50))
+        self.catW = 50
+        self.cat = pygame.Surface((self.catW,self.catW))
         self.cat.fill((255,0,0))
         self.cat = pygame.image.load("cat.png")
         self.x = 100
         self.y = 100
         self.velocity = 10
         self.press = pygame.event.get
+        
 
         #explosion sound
         mixer.init()
         self.effect = pygame.mixer.Sound("explosion.mp3")
+
+        #hide variables
+        self.can_hide = 3000
 
 
         #target object sprites
@@ -86,6 +91,8 @@ class Game():
                 self.playing= False
             self.display.fill(self.BLACK)
 
+
+
             
             #background image
             self.display.blit(self.game_back, (0, 0))
@@ -96,14 +103,23 @@ class Game():
 
             #object sprites drawn
             self.window.blit(self.bug, (self.bugX, self.bugY))
+            self.window.blit(self.can, (self.canX + self.can_hide, self.canY))
+
+
+
             if self.level1 == True:
-                self.window.blit(self.can, (self.canX, self.canY))
-            if self.level1 & self.level2 == True:
-                self.window.blit(self.fish, (self.fishX, self.fishY))
-            if self.level1 & self.level2 & self.level3 == True:
-                self.window.blit(self.car, (self.carX, self.carY))
-            if self.level1 & self.level2 & self.level3 & self.level4 == True:
-                self.window.blit(self.house, (self.houseX, self.houseY))
+                self.can_hide = 0
+
+                
+            # if self.level1 & self.level2 == True:
+            #     self.window.blit(self.fish, (self.fishX, self.fishY))
+            # if self.level1 & self.level2 & self.level3 == True:
+            #     self.window.blit(self.car, (self.carX, self.carY))
+            # if self.level1 & self.level2 & self.level3 & self.level4 == True:
+            #     self.window.blit(self.house, (self.houseX, self.houseY))
+
+
+
 
             # if self.cat.get_rect().colliderect(self.house.get_rect()):
             #     self.level5 = True
@@ -114,60 +130,12 @@ class Game():
             # if self.cat.get_rect().colliderect(self.sun.get_rect()):
             #     self.level8 = True
 
-
-            #draw sprites at random locations
-            
-            # level 1
-            # if self.level1 == False:
-            #     self.window.blit(self.bug, (self.bugX, self.bugY))
-            # elif self.level1 == True:
-            #     self.window.blit(self.bug, (2000, 2000))
-
-
-            # level 2
-            # if self.level1 == False:
-            #     self.window.blit(self.can, (self.canX, self.canY))
-            # else:
-            #     self.window.blit(self.can, (2000, 2000))
-            # # level 3
-            # if self.level1 == False:
-            #     self.window.blit(self.fish, (self.fishX, self.fishY))
-            # else:
-            #     self.window.blit(self.fish, (2000, 2000))
-            # # level 4
-            # if self.level1 == False:
-            #     self.window.blit(self.car, (self.carX, self.carY))
-            # else:
-            #     self.window.blit(self.car, (2000, 2000))
-            # # level 5
-            # if self.level1 == False:
-            #     self.window.blit(self.house, (self.houseX, self.houseY))
-            # else:
-            #     self.window.blit(self.house, (2000, 2000))
-            # # level 6
-            # if self.level1 == False:
-            #     self.window.blit(self.moon, (self.moonX, self.moonY))
-            # else:
-            #     self.window.blit(self.moon, (2000, 2000))
-            # # level 7
-            # if self.level1 == False:
-            #     self.window.blit(self.earth, (self.earthX, self.earthY))
-            # else:
-            #     self.window.blit(self.earth, (2000, 2000))
-            # # level 8
-            # if self.level1 == False:
-            #     self.window.blit(self.sun, (self.sunX, self.sunY))
-            # else:
-            #     self.window.blit(self.sun, (2000, 2000))
-
             #clock 
             self.clock.tick(100)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                 
-
-
             #movement
             keys = pygame.key.get_pressed()
             if keys[pygame.K_LEFT] | keys[pygame.K_a]:
@@ -185,17 +153,20 @@ class Game():
             if keys[pygame.K_ESCAPE]:
                 pygame.quit()
 
-
             #check if cat hit any of the objects
-            self.cat_rect = pygame.Rect((self.x, self.y), (50, 50))
+            self.cat_rect = pygame.Rect((self.x, self.y), (self.catW, self.catW))
             self.bug_rect = pygame.Rect((self.bugX, self.bugY), (50, 50))
+            self.can_rect = pygame.Rect((self.canX, self.canY), (70, 70))
 
             if self.cat_rect.colliderect(self.bug_rect):
                 self.effect.play()
                 self.bugX = 3000
                 self.level1 = True
 
-
+            if self.cat_rect.colliderect(self.can_rect):
+                self.effect.play()
+                self.canX = 3000
+                self.level2 = True
 
 
 
