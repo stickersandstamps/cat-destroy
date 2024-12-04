@@ -22,6 +22,11 @@ class Game():
         self.velocity = 10
         self.press = pygame.event.get
 
+        #explosion sound
+        mixer.init()
+        self.effect = pygame.mixer.Sound("explosion.mp3")
+
+
         #target object sprites
         #self.image = pygame.image.load("/path/to/image_file.png")
         self.bug = pygame.Surface((50,50))
@@ -207,8 +212,7 @@ class Game():
             self.bug_rect = pygame.Rect((self.bugX, self.bugY), (50, 50))
 
             if self.cat_rect.colliderect(self.bug_rect):
-                pygame.mixer.music.load('foo.mp3')
-                pygame.mixer.music.play(0)
+                self.effect.play()
                 self.bugX = 3000
 
 
