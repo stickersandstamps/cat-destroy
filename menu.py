@@ -100,8 +100,8 @@ class OptionsMenu(Menu):
     def __init__(self, game):
         Menu.__init__(self, game)
         self.state = 'Volume'
-        self.volx, self.voly = self.mid_w, self.mid_h + 20
-        self.controlsx, self.controlsy = self.mid_w, self.mid_h + 40 + 40
+        self.volx, self.voly = self.mid_w + 325, self.mid_h + 20
+        self.controlsx, self.controlsy = self.mid_w + 325, self.mid_h + 40 + 40
         self.cursor_rect.midtop = (self.volx + self.offset, self.voly)
 
     def display_menu(self):
@@ -137,9 +137,6 @@ class OptionsMenu(Menu):
             
 
 
-
-
-
     def check_input(self):
         if self.game.BACK_KEY:
             self.game.curr_menu = self.game.main_menu
@@ -147,10 +144,10 @@ class OptionsMenu(Menu):
         elif self.game.UP_KEY or self.game.DOWN_KEY:
             if self.state == 'Volume':
                 self.state = 'Controls'
-                self.cursor_rect.midtop = (self.controlsx + self.offset, self.controlsy)
+                self.cursor_rect.midtop = (self.controlsx + self.offset - 250, self.controlsy)
             elif self.state == 'Controls':
                 self.state = 'Volume'
-                self.cursor_rect.midtop = (self.volx + self.offset, self.voly)
+                self.cursor_rect.midtop = (self.volx + self.offset - 250, self.voly)
         elif self.game.START_KEY:
             pass
 
