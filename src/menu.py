@@ -33,7 +33,8 @@ class MainMenu(Menu):
         mixer.init()
         mixer.music.load("main_menu_music.mp3")
         mixer.music.set_volume(0.9)
-        mixer.music.play()
+        mixer.music.play(-1)
+        
 
         Menu.__init__(self, game)
         self.state = "Start"
