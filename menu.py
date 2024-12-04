@@ -125,7 +125,15 @@ class OptionsMenu(Menu):
             self.draw_cursor()
             self.blit_screen()
 
+            keys = pygame.key.get_pressed()
+            
+            if keys[pygame.K_m]:
+                # mute audio
+                 mixer.music.set_volume(0)
 
+            if keys[pygame.K_u]:
+                # activate audio
+                mixer.music.set_volume(0.9)
             
 
 
