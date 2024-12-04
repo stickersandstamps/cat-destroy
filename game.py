@@ -23,7 +23,6 @@ class Game():
         self.velocity = 10
         self.press = pygame.event.get
         
-
         #explosion sound
         mixer.init()
         self.effect = pygame.mixer.Sound("explosion.mp3")
@@ -42,27 +41,35 @@ class Game():
         #self.image = pygame.image.load("/path/to/image_file.png")
         self.bug = pygame.Surface((50,50))
         self.bugX, self.bugY = random.randint(0 + 50 , 1440 - 50),random.randint(0 + 50, 810 - 50)
+        #self.bug = pygame.image.load("bug.png")
 
         self.can = pygame.Surface((70,70))
         self.canX, self.canY = random.randint(0 + 70, 1440 - 70),random.randint(0 + 70, 810 - 70)
+        #self.can = pygame.image.load("can.png")
 
         self.fish = pygame.Surface((90,90))
         self.fishX, self.fishY = random.randint(0 + 90, 1440 - 90),random.randint(0 + 90, 810 - 90)
+        #self.fish = pygame.image.load("fish.png")
 
         self.car = pygame.Surface((110,110))
         self.carX, self.carY = random.randint(0 + 110, 1440 - 110),random.randint(0 + 110, 810 - 110)
+        #self.car = pygame.image.load("car.png")
 
         self.house = pygame.Surface((130,130))
         self.houseX, self.houseY = random.randint(0 + 130, 1440 -130),random.randint(0 + 130, 810 - 130)
+        #self.house = pygame.image.load("house.png")
 
         self.moon = pygame.Surface((150,150))
         self.moonX, self.moonY = random.randint(0 + 150, 1440 - 150),random.randint(0 + 150, 810 - 150)
+        #self.moon = pygame.image.load("moon.png")
 
         self.earth = pygame.Surface((170,170))
         self.earthX, self.earthY = random.randint(0 + 170, 1440 - 170),random.randint(0 + 170, 810 - 170)
+        #self.earth = pygame.image.load("earth.png")
 
         self.sun = pygame.Surface((190,190))
         self.sunX, self.sunY = random.randint(0 + 190, 1440 - 190),random.randint(0 + 190, 810 - 190)
+        #self.sun = pygame.image.load("sun.png")
 
         #level complete true/false
         self.level1 = False
@@ -72,7 +79,6 @@ class Game():
         self.level5 = False
         self.level6 = False
         self.level7 = False
-        self.level8 = False
 
 
         pygame.init()
@@ -97,9 +103,6 @@ class Game():
                 self.playing= False
             self.display.fill(self.BLACK)
 
-
-
-            
             #background image
             self.display.blit(self.game_back, (0, 0))
             self.window.blit(self.display, (0,0))
@@ -117,29 +120,20 @@ class Game():
             self.window.blit(self.earth, (self.earthX + self.earth_hide, self.earthY))
             self.window.blit(self.sun, (self.sunX + self.sun_hide, self.sunY))
 
-
             if self.level1 == True:
                 self.can_hide = 0
-
-                
-            # if self.level1 & self.level2 == True:
-            #     self.window.blit(self.fish, (self.fishX, self.fishY))
-            # if self.level1 & self.level2 & self.level3 == True:
-            #     self.window.blit(self.car, (self.carX, self.carY))
-            # if self.level1 & self.level2 & self.level3 & self.level4 == True:
-            #     self.window.blit(self.house, (self.houseX, self.houseY))
-
-
-
-
-            # if self.cat.get_rect().colliderect(self.house.get_rect()):
-            #     self.level5 = True
-            # if self.cat.get_rect().colliderect(self.moon.get_rect()):
-            #     self.level6 = True
-            # if self.cat.get_rect().colliderect(self.earth.get_rect()):
-            #     self.level7 = True
-            # if self.cat.get_rect().colliderect(self.sun.get_rect()):
-            #     self.level8 = True
+            if self.level1 & self.level2 == True:
+                self.fish_hide = 0
+            if self.level1 & self.level2 & self.level3 == True:
+                self.car_hide = 0
+            if self.level1 & self.level2 & self.level3 & self.level4 == True:
+                self.house_hide = 0
+            if self.level1 & self.level2 & self.level3 & self.level4 & self.level5 == True:
+                self.moon_hide = 0
+            if self.level1 & self.level2 & self.level3 & self.level4 & self.level5 & self.level6 == True:
+                self.earth_hide = 0
+            if self.level1 & self.level2 & self.level3 & self.level4 & self.level5 & self.level6 & self.level7 == True:
+                self.sun_hide = 0
 
             #clock 
             self.clock.tick(100)
@@ -168,6 +162,12 @@ class Game():
             self.cat_rect = pygame.Rect((self.x, self.y), (self.catW, self.catW))
             self.bug_rect = pygame.Rect((self.bugX, self.bugY), (50, 50))
             self.can_rect = pygame.Rect((self.canX, self.canY), (70, 70))
+            self.fish_rect = pygame.Rect((self.fishX, self.fishY), (90, 90))
+            self.car_rect = pygame.Rect((self.carX, self.carY), (110, 110))
+            self.house_rect = pygame.Rect((self.houseX, self.houseY), (130, 130))
+            self.moon_rect = pygame.Rect((self.moonX, self.moonY), (150, 150))
+            self.earth_rect = pygame.Rect((self.earthX, self.earthY), (170, 170))
+            self.fish_sun = pygame.Rect((self.sunX, self.sunY), (190, 190))
 
             if self.cat_rect.colliderect(self.bug_rect):
                 self.effect.play()
@@ -179,8 +179,34 @@ class Game():
                 self.canX = 3000
                 self.level2 = True
 
+            if self.cat_rect.colliderect(self.fish_rect):
+                self.effect.play()
+                self.fishX = 3000
+                self.level3 = True
 
+            if self.cat_rect.colliderect(self.car_rect):
+                self.effect.play()
+                self.carX = 3000
+                self.level4 = True
 
+            if self.cat_rect.colliderect(self.house_rect):
+                self.effect.play()
+                self.houseX = 3000
+                self.level5 = True
+
+            if self.cat_rect.colliderect(self.moon_rect):
+                self.effect.play()
+                self.moonX = 3000
+                self.level6 = True
+
+            if self.cat_rect.colliderect(self.earth_rect):
+                self.effect.play()
+                self.earthX = 3000
+                self.level7 = True
+
+            if self.cat_rect.colliderect(self.sun_rect):
+                self.effect.play()
+                self.sunX = 3000
 
 
 
