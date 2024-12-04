@@ -79,6 +79,7 @@ class Game():
         self.level5 = False
         self.level6 = False
         self.level7 = False
+        self.level8 = False
 
 
         pygame.init()
