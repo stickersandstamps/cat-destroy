@@ -1,5 +1,4 @@
 import cowsay
-import pygame
 from game import Game
 
 
