@@ -28,13 +28,13 @@ class Game():
         self.effect = pygame.mixer.Sound("explosion.mp3")
 
         #hide variables
-        self.can_hide = 3000
-        self.fish_hide = 3000
-        self.car_hide = 3000
-        self.house_hide = 3000
-        self.moon_hide = 3000
-        self.earth_hide = 3000
-        self.sun_hide = 3000
+        self.can_hide = 500
+        self.fish_hide = 5000
+        self.car_hide = 5000
+        self.house_hide = 5000
+        self.moon_hide = 5000
+        self.earth_hide = 5000
+        self.sun_hide = 5000
 
 
         #target object sprites
@@ -122,17 +122,17 @@ class Game():
 
             if self.level1 == True:
                 self.can_hide = 0
-            if self.level1 & self.level2 == True:
+            if self.level2 == True:
                 self.fish_hide = 0
-            if self.level1 & self.level2 & self.level3 == True:
+            if self.level3 == True:
                 self.car_hide = 0
-            if self.level1 & self.level2 & self.level3 & self.level4 == True:
+            if self.level4 == True:
                 self.house_hide = 0
-            if self.level1 & self.level2 & self.level3 & self.level4 & self.level5 == True:
+            if self.level5 == True:
                 self.moon_hide = 0
-            if self.level1 & self.level2 & self.level3 & self.level4 & self.level5 & self.level6 == True:
+            if self.level6 == True:
                 self.earth_hide = 0
-            if self.level1 & self.level2 & self.level3 & self.level4 & self.level5 & self.level6 & self.level7 == True:
+            if self.level7 == True:
                 self.sun_hide = 0
 
             #clock 
@@ -160,14 +160,15 @@ class Game():
 
             #check if cat hit any of the objects
             self.cat_rect = pygame.Rect((self.x, self.y), (self.catW, self.catW))
+
             self.bug_rect = pygame.Rect((self.bugX, self.bugY), (50, 50))
-            self.can_rect = pygame.Rect((self.canX, self.canY), (70, 70))
-            self.fish_rect = pygame.Rect((self.fishX, self.fishY), (90, 90))
-            self.car_rect = pygame.Rect((self.carX, self.carY), (110, 110))
-            self.house_rect = pygame.Rect((self.houseX, self.houseY), (130, 130))
-            self.moon_rect = pygame.Rect((self.moonX, self.moonY), (150, 150))
-            self.earth_rect = pygame.Rect((self.earthX, self.earthY), (170, 170))
-            self.fish_sun = pygame.Rect((self.sunX, self.sunY), (190, 190))
+            self.can_rect = pygame.Rect((self.canX + self.can_hide, self.canY), (70, 70))
+            self.fish_rect = pygame.Rect((self.fishX + self.fish_hide, self.fishY), (90, 90))
+            self.car_rect = pygame.Rect((self.carX + self.car_hide, self.carY), (110, 110))
+            self.house_rect = pygame.Rect((self.houseX + self.house_hide, self.houseY), (130, 130))
+            self.moon_rect = pygame.Rect((self.moonX + self.moon_hide, self.moonY), (150, 150))
+            self.earth_rect = pygame.Rect((self.earthX + self.earth_hide, self.earthY), (170, 170))
+            self.sun_rect = pygame.Rect((self.sunX + self.sun_hide, self.sunY), (190, 190))
 
             if self.cat_rect.colliderect(self.bug_rect):
                 self.effect.play()
