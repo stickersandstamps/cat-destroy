@@ -41,11 +41,11 @@ class Game():
         #self.image = pygame.image.load("/path/to/image_file.png")
         self.bug = pygame.Surface((50,50))
         self.bugX, self.bugY = random.randint(0 + 50 , 1440 - 50),random.randint(0 + 50, 810 - 50)
-        #self.bug = pygame.image.load("bug.png")
+        self.bug = pygame.image.load("bug.png")
 
         self.can = pygame.Surface((70,70))
         self.canX, self.canY = random.randint(0 + 70, 1440 - 70),random.randint(0 + 70, 810 - 70)
-        #self.can = pygame.image.load("can.png")
+        self.can = pygame.image.load("can.png")
 
         self.fish = pygame.Surface((90,90))
         self.fishX, self.fishY = random.randint(0 + 90, 1440 - 90),random.randint(0 + 90, 810 - 90)
