@@ -119,11 +119,18 @@ class OptionsMenu(Menu):
             self.game.draw_text('Options', 80, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 - 30)
 
             #options
-            self.game.draw_text("Volume", 50, self.volx, self.voly)
-            #self.game.draw_text("Controls", 50, self.controlsx, self.controlsy)
+            self.game.draw_text("Press 'M' to mute music.", 50, self.volx, self.voly)
+            self.game.draw_text("Press 'U' to unmute music", 50, self.controlsx, self.controlsy)
 
             self.draw_cursor()
             self.blit_screen()
+
+
+            
+
+
+
+
 
     def check_input(self):
         if self.game.BACK_KEY:
