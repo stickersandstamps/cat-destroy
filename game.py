@@ -96,26 +96,8 @@ class Game():
 
             #object sprites drawn
             self.window.blit(self.bug, (self.bugX, self.bugY))
-
-
-
-            # if self.cat.get_rect().colliderect(self.bug.get_rect()):
-            #     self.level1 = True
-
-
-
-
-
-
-
-            # if self.x >= self.bugX & self.x <= self.bugX + 50:
-            #     if self.y <= self.bugY & self.y >= self.bugY - 50:
-            #         self.level1 = True
-
-
-
-
-
+            if self.level1 == True:
+                self.window.blit(self.can, (self.canX, self.canY))
 
 
 
@@ -214,6 +196,7 @@ class Game():
             if self.cat_rect.colliderect(self.bug_rect):
                 self.effect.play()
                 self.bugX = 3000
+                self.level1 = True
 
 
 
