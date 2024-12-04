@@ -211,15 +211,11 @@ class Game():
                 self.sunX = 3000
                 self.level8 = True
 
-
             if self.level8 == True:
                 self.display.blit(self.game_back, (0, 0))
                 self.draw_text('Thanks for playing!', 50, self.DISPLAY_W / 2, self.DISPLAY_H / 2 - 20)
                 self.window.blit(self.display, (0,0))
                 
-
-
-
             pygame.display.update()
             self.reset_keys()
 

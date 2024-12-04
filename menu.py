@@ -8,13 +8,11 @@ class Menu():
         self.menu_back = pygame.image.load("main_menu_back.png")
         self.game_back = pygame.image.load("game_back.png")
 
-
         self.game = game
         self.mid_w, self.mid_h = self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2
 
         self.mid_w -= 300
         self.mid_h += 150
-
 
         self.run_display = True
         self.cursor_rect = pygame.Rect(0, 0, 20, 20)
@@ -54,8 +52,6 @@ class MainMenu(Menu):
             #background image
             self.game.display.blit(self.menu_back, (0, 0))
 
-
-            #self.game.draw_text('Main Menu', 20, self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2 - 20)
             self.game.draw_text("Start", 50, self.startx, self.starty)
             self.game.draw_text("Options", 50, self.optionsx, self.optionsy)
             self.game.draw_text("Quit", 50, self.quitx, self.quity)
@@ -107,7 +103,6 @@ class OptionsMenu(Menu):
     def display_menu(self):
         self.run_display = True
         while self.run_display:
-
     
             self.game.check_events()
             self.check_input()
