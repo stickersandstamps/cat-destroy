@@ -32,7 +32,7 @@ class MainMenu(Menu):
     #MENU MUSIC
         mixer.init()
         mixer.music.load("main_menu_music.mp3")
-        mixer.music.set_volume(0.9)
+        mixer.music.set_volume(0.3)
         mixer.music.play(-1)
         
 
@@ -129,7 +129,7 @@ class OptionsMenu(Menu):
 
             if keys[pygame.K_u]:
                 # activate audio
-                mixer.music.set_volume(0.9)
+                mixer.music.set_volume(0.3)
             
 
 
