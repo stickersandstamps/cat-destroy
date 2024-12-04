@@ -27,26 +27,26 @@ class Game():
         self.bug = pygame.Surface((50,50))
         self.bugX, self.bugY = random.randint(0 + 50 , 1440 - 50),random.randint(0 + 50, 810 - 50)
 
-        self.can = pygame.Surface((50,50))
-        self.canX, self.canY = random.randint(0, 1440),random.randint(0, 810)
+        self.can = pygame.Surface((70,70))
+        self.canX, self.canY = random.randint(0 + 70, 1440 - 70),random.randint(0 + 70, 810 - 70)
 
-        self.fish = pygame.Surface((50,50))
-        self.fishX, self.fishY = random.randint(0, 1440),random.randint(0, 810)
+        self.fish = pygame.Surface((90,90))
+        self.fishX, self.fishY = random.randint(0 + 90, 1440 - 90),random.randint(0 + 90, 810 - 90)
 
-        self.car = pygame.Surface((50,50))
-        self.carX, self.carY = random.randint(0, 1440),random.randint(0, 810)
+        self.car = pygame.Surface((110,110))
+        self.carX, self.carY = random.randint(0 + 110, 1440 - 110),random.randint(0 + 110, 810 - 110)
 
-        self.house = pygame.Surface((50,50))
-        self.houseX, self.houseY = random.randint(0, 1440),random.randint(0, 810)
+        self.house = pygame.Surface((130,130))
+        self.houseX, self.houseY = random.randint(0 + 130, 1440 -130),random.randint(0 + 130, 810 - 130)
 
-        self.moon = pygame.Surface((50,50))
-        self.moonX, self.moonY = random.randint(0, 1440),random.randint(0, 810)
+        self.moon = pygame.Surface((150,150))
+        self.moonX, self.moonY = random.randint(0 + 150, 1440 - 150),random.randint(0 + 150, 810 - 150)
 
-        self.earth = pygame.Surface((50,50))
-        self.earthX, self.earthY = random.randint(0, 1440),random.randint(0, 810)
+        self.earth = pygame.Surface((170,170))
+        self.earthX, self.earthY = random.randint(0 + 170, 1440 - 170),random.randint(0 + 170, 810 - 170)
 
-        self.sun = pygame.Surface((50,50))
-        self.sunX, self.sunY = random.randint(0, 1440),random.randint(0, 810)
+        self.sun = pygame.Surface((190,190))
+        self.sunX, self.sunY = random.randint(0 + 190, 1440 - 190),random.randint(0 + 190, 810 - 190)
 
         #level complete true/false
         self.level1 = False
