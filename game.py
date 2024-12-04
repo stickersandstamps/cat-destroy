@@ -84,20 +84,14 @@ class Game():
             
             #background image
             self.display.blit(self.game_back, (0, 0))
-
-            #unused text
-            #self.draw_text('Thanks for Playing', 20, self.DISPLAY_W/2, self.DISPLAY_H/2)
-            
             self.window.blit(self.display, (0,0))
-
-
-            #GAME PLAY!!
 
             #sprite drawn
             self.window.blit(self.cat, (self.x,self.y))
 
+            #object sprites drawn
+            self.window.blit(self.bug, (self.bugX, self.bugY))
 
-            #check if cat hit any of the objects
 
 
             # if self.cat.get_rect().colliderect(self.bug.get_rect()):
@@ -140,10 +134,10 @@ class Game():
             #draw sprites at random locations
             
             # level 1
-            if self.level1 == False:
-                self.window.blit(self.bug, (self.bugX, self.bugY))
-            elif self.level1 == True:
-                self.window.blit(self.bug, (2000, 2000))
+            # if self.level1 == False:
+            #     self.window.blit(self.bug, (self.bugX, self.bugY))
+            # elif self.level1 == True:
+            #     self.window.blit(self.bug, (2000, 2000))
 
 
             # level 2
@@ -206,6 +200,27 @@ class Game():
                     self.y += self.velocity
             if keys[pygame.K_ESCAPE]:
                 pygame.quit()
+
+
+            #check if cat hit any of the objects
+            self.cat_rect = pygame.Rect((self.x, self.y), (50, 50))
+            self.bug_rect = pygame.Rect((self.bugX, self.bugY), (50, 50))
+
+            if self.cat_rect.colliderect(self.bug_rect):
+                pygame.mixer.music.load('foo.mp3')
+                pygame.mixer.music.play(0)
+                self.bugX = 3000
+
+
+
+
+
+
+
+
+
+
+
 
 
 
