@@ -7,4 +7,6 @@ Demo Video: <URL>
 GitHub Repo: <https://github.com/stickersandstamps/cat-destroy.git>
 
 ## Description
-An all-powerful cat destroys toys, houses, Earth, and eventually the entire universe...
+An all-powerful cat destroys a bug, a can, a fish, a car, a house, the moon, the Earth, and the sun. 
+
+
