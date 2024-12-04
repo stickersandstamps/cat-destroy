@@ -36,9 +36,7 @@ class Game():
         self.earth_hide = 5000
         self.sun_hide = 5000
 
-
         #target object sprites
-        #self.image = pygame.image.load("/path/to/image_file.png")
         self.bug = pygame.Surface((50,50))
         self.bugX, self.bugY = random.randint(0 + 50 , 1440 - 50),random.randint(0 + 50, 810 - 50)
         self.bug = pygame.image.load("bug.png")
@@ -80,7 +78,6 @@ class Game():
         self.level6 = False
         self.level7 = False
         self.level8 = False
-
 
         pygame.init()
         self.running, self.playing = True, False
