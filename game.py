@@ -161,7 +161,7 @@ class Game():
 
             #check if cat hit any of the objects
             self.cat_rect = pygame.Rect((self.x, self.y), (self.catW, self.catW))
-
+            #objects
             self.bug_rect = pygame.Rect((self.bugX, self.bugY), (50, 50))
             self.can_rect = pygame.Rect((self.canX + self.can_hide, self.canY), (70, 70))
             self.fish_rect = pygame.Rect((self.fishX + self.fish_hide, self.fishY), (90, 90))
@@ -209,6 +209,13 @@ class Game():
             if self.cat_rect.colliderect(self.sun_rect):
                 self.effect.play()
                 self.sunX = 3000
+                self.level8 = True
+
+
+            if self.level8 == True:
+                self.display.blit(self.game_back, (0, 0))
+                self.window.blit(self.display, (0,0))
+
 
 
             pygame.display.update()
