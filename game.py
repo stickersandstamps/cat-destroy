@@ -28,7 +28,7 @@ class Game():
         self.effect = pygame.mixer.Sound("explosion.mp3")
 
         #hide variables
-        self.can_hide = 500
+        self.can_hide = 5000
         self.fish_hide = 5000
         self.car_hide = 5000
         self.house_hide = 5000
@@ -210,19 +210,10 @@ class Game():
                 self.sunX = 3000
 
 
-
-
-
-
-
-
-
             pygame.display.update()
             self.reset_keys()
 
-            
-
-
+        
 
 
     def check_events(self):
