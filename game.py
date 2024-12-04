@@ -98,16 +98,13 @@ class Game():
             self.window.blit(self.bug, (self.bugX, self.bugY))
             if self.level1 == True:
                 self.window.blit(self.can, (self.canX, self.canY))
+            if self.level1 & self.level2 == True:
+                self.window.blit(self.fish, (self.fishX, self.fishY))
+            if self.level1 & self.level2 & self.level3 == True:
+                self.window.blit(self.car, (self.carX, self.carY))
+            if self.level1 & self.level2 & self.level3 & self.level4 == True:
+                self.window.blit(self.house, (self.houseX, self.houseY))
 
-
-
-
-            # if self.cat.get_rect().colliderect(self.can.get_rect()):
-            #     self.level2 = True
-            # if self.cat.get_rect().colliderect(self.fish.get_rect()):
-            #     self.level3 = True
-            # if self.cat.get_rect().colliderect(self.car.get_rect()):
-            #     self.level4 = True
             # if self.cat.get_rect().colliderect(self.house.get_rect()):
             #     self.level5 = True
             # if self.cat.get_rect().colliderect(self.moon.get_rect()):
