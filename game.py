@@ -30,6 +30,12 @@ class Game():
 
         #hide variables
         self.can_hide = 3000
+        self.fish_hide = 3000
+        self.car_hide = 3000
+        self.house_hide = 3000
+        self.moon_hide = 3000
+        self.earth_hide = 3000
+        self.sun_hide = 3000
 
 
         #target object sprites
@@ -104,7 +110,12 @@ class Game():
             #object sprites drawn
             self.window.blit(self.bug, (self.bugX, self.bugY))
             self.window.blit(self.can, (self.canX + self.can_hide, self.canY))
-
+            self.window.blit(self.fish, (self.fishX + self.fish_hide, self.fishY))
+            self.window.blit(self.car, (self.carX + self.car_hide, self.carY))
+            self.window.blit(self.house, (self.houseX + self.house_hide, self.houseY))
+            self.window.blit(self.moon, (self.moonX + self.moon_hide, self.moonY))
+            self.window.blit(self.earth, (self.earthX + self.earth_hide, self.earthY))
+            self.window.blit(self.sun, (self.sunX + self.sun_hide, self.sunY))
 
 
             if self.level1 == True:
